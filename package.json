@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "npx elocuent -d static.src -o static/predictive_tool_final.csv",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear"
@@ -18,7 +17,7 @@
     "rollup": "^3.29.4",
     "rollup-plugin-css-only": "^4.3.0",
     "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-svelte": "^7.1.2",
+    "rollup-plugin-svelte": "^7.2.0",
     "svelte": "^3.55.0"
   },
   "dependencies": {
