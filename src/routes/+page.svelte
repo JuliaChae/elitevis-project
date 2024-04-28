@@ -9,7 +9,7 @@
 <main>
     <div class="title-page">
         <h1>Understanding Boston's Speculative Investment Landscape</h1>
-        <p class="team-name">VisTeam</p>
+        <p class="team-name">EliteVisTeam</p>
         <hr class="separator">
     </div>
   <div class="subtitle-page">

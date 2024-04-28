@@ -1,14 +1,43 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="%sveltekit.assets%/style.css" />
-		<script src="%sveltekit.assets%/global.js" type="module"></script>
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+	<!-- <head>
+		<title>Scrollytelling using D3 and Waypoints</title>
+		<link rel="icon" href="data:;base64,iVBORwOKGO=" />
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+	</head> -->
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="%sveltekit.assets%/style.css" />
+	<link rel="stylesheet" href="style.css">
+	<script src="%sveltekit.assets%/global.js" type="module"></script>
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	%sveltekit.head%
+</head>
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents">%sveltekit.body%</div>
+	
+	<!-- hiking example starts --> 
+	<div class="page">
+		<h1>A Homebuyer's Guide to Investor Activity in Boston</h1> 
+		<div class="container">
+			<div id="vis"></div>
+			<div id="prose">
+				<div class="step" id="step0">There are a total of <span class="count" id="hikes-count"></span>  zipcodes that have a median home price at over one million dollars,
+				ten times that of the average Boston household income ($120,000).</div>
+				<div class="step" id="step1"><span class="count" id="easy-hikes-count"></span> counties where the investor rate is above 30%.</div>
+				<div class="step" id="step2"><span class="count" id="difficult-hikes-count"></span> counties where the investment activity has gone up significantly (>15%) in the past 5 years.</div>
+				<div class="step" id="step3">The county with the highest investment activity: <b>Back Bay</b> (zipcode 02199). <br></div>
+				<div class="step" id="step4">The top 10 counties with the highest investment activity.</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="d3.v6.min.js"></script>
+	<script src="noframework.waypoints.min.js"></script>
+	<script src="scrollerVis.js"></script>
+	<script src="main.js"></script>
+	<!-- hiking example ends -->
+</body>
 </html>
