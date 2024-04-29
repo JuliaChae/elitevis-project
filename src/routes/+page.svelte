@@ -22,9 +22,13 @@
     <h1>Boston Housing Market Mini Games</h1>
   </div>
   <LuxuryApartment />
+
+  <img src = "public/PrinceofDarkness_Comic.jpg" alt="" style="width: 1200px;"/>
+
   <SquareFootage />
   <HomeBuyers />
   <PredictiveTool />
+
 </main>
 
 <style>
