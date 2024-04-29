@@ -74,7 +74,7 @@
   
 	async function fetchData() {
 	  try {
-		const data = await csv('public/averaged_by_zip.csv');
+		const data = await csv('data/averaged_by_zip.csv');
 		zip_data = data;
 	  } catch (error) {
 		console.error('Error fetching data:', error);
