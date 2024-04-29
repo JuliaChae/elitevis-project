@@ -196,7 +196,7 @@
 		{/each}
 	  </select>
 	  {#if option1 !== ''}
-	  	<p><b><center>Demographic breakdown (by 10s)</center></b></p>
+	  	<p><b><center>Demographics (by 10s)</center></b></p>
 		<div class="legend">
 			<div class="legend-item">
 			  <div class="square_white"></div>
@@ -244,7 +244,7 @@
 
 
 		<br><br>
-		<p><b><center>Age breakdown (by 10s)</center></b></p>
+		<p><b><center>Age (by 10s)</center></b></p>
 		<div class="legend">
 			<div class="legend-item">
 			  <div class="square_u18"></div>
@@ -277,7 +277,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Sex breakdown (by 10s)</center></b></p>
+		<p><b><center>Sex (by 10s)</center></b></p>
 		<div class="legend">
 			<div class="legend-item">
 			  <div class="square_male"></div>
@@ -303,7 +303,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Median Price breakdown (by $1000)</center></b></p>
+		<p><b><center>Median Price (by $1000)</center></b></p>
 		<div class="population">
 		  {#if zip_medianprice_1 !== null}
 			{#each Array(Math.ceil(zip_medianprice_1 / 1000)) as _, i}
@@ -315,7 +315,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Percentage of Investor Activity (by 1%)</center></b></p>
+		<p><b><center>Percentage of Investor Activity (by %)</center></b></p>
 		<div class="population">
 		  {#if zip_perc_investor_1 !== null}
 			{#each Array(Math.ceil(zip_perc_investor_1 * 100)) as _, i}
@@ -337,7 +337,7 @@
 		{/each}
 	  </select>
 	  {#if option2 !== ''}
-	  	<p><b><center>Demographic breakdown (by 10s)</center></b></p>
+	  	<p><b><center>Demographics (by 10s)</center></b></p>
 		<div class="legend">
 			<div class="legend-item">
 			  <div class="square_white"></div>
@@ -384,7 +384,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Age breakdown (by 10s)</center></b></p>
+		<p><b><center>Age (by 10s)</center></b></p>
 		<div class="legend">
 			<div class="legend-item">
 			  <div class="square_u18"></div>
@@ -417,7 +417,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Sex breakdown (by 10s)</center></b></p>
+		<p><b><center>Sex (by 10s)</center></b></p>
 		<div class="legend">
 			<div class="legend-item">
 			  <div class="square_male"></div>
@@ -443,7 +443,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Median Price breakdown (by $1000)</center></b></p>
+		<p><b><center>Median Price (by $1000)</center></b></p>
 		<div class="population">
 		  {#if zip_medianprice_2 !== null}
 			{#each Array(Math.ceil(zip_medianprice_2 / 1000)) as _, i}
@@ -455,7 +455,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Percentage of Investor Activity (by 1%)</center></b></p>
+		<p><b><center>Percentage of Investor Activity (by %)</center></b></p>
 		<div class="population">
 		  {#if zip_perc_investor_2 !== null}
 			{#each Array(Math.ceil(zip_perc_investor_2 * 100)) as _, i}
@@ -477,7 +477,7 @@
 		{/each}
 	  </select>
 	  {#if option3 !== ''}
-	  	<p><b><center>Demographic breakdown (by 10s)</center></b></p>		
+	  	<p><b><center>Demographics (by 10s)</center></b></p>		
 		<div class="legend">
 			<div class="legend-item">
 			  <div class="square_white"></div>
@@ -524,7 +524,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Age breakdown (by 10s)</center></b></p>
+		<p><b><center>Age (by 10s)</center></b></p>
 		<div class="legend">
 			<div class="legend-item">
 			  <div class="square_u18"></div>
@@ -557,7 +557,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Sex breakdown (by 10s)</center></b></p>
+		<p><b><center>Sex (by 10s)</center></b></p>
 		<div class="legend">
 			<div class="legend-item">
 			  <div class="square_male"></div>
@@ -583,7 +583,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Median Price breakdown (by $1000)</center></b></p>
+		<p><b><center>Median Price (by $1000)</center></b></p>
 		<div class="population">
 		  {#if zip_medianprice_3 !== null}
 			{#each Array(Math.ceil(zip_medianprice_3 / 1000)) as _, i}
@@ -595,7 +595,7 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Percentage of Investor Activity (by 1%)</center></b></p>
+		<p><b><center>Percentage of Investor Activity (by %)</center></b></p>
 		<div class="population">
 		  {#if zip_perc_investor_3 !== null}
 			{#each Array(Math.ceil(zip_perc_investor_3 * 100)) as _, i}
