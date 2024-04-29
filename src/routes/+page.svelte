@@ -17,7 +17,7 @@
   <div class="text-container">
     <h1>Are you interested in buying in Boston?</h1>
     <p>Welcome! As one of the oldest cities in America, Boston is a charming city with over 300 years of history. The city is home to 
-    beautiful cobblestone streets, historic sites, world-clas educational institutions, as well as over 20 distinct neighborhoods, each 
+    beautiful cobblestone streets, historic sites, world-class educational institutions, as well as over 20 distinct neighborhoods, each 
     with its own characteristics and charm. In this web page, we will help you gain a better understanding of the Boston housing market,
     with a specific dive into the spculative investor activites across the city. </p>
   </div>
@@ -63,6 +63,17 @@
   <div class="container">
     <img src = "map.png" alt="" style="width: 1200px;"/>
   </div>
+
+  <div class="text-container">
+    <h1>Resources for New Homebuyers</h1>
+    <p>Learn More About Buying in Boston with these resources (we’ve compiled these resources to be especially user-friendly for first-time home buyers navigating the Boston housing market!)</p>
+    <ol>
+      <li>Here is a great resource that lets you set a realistic budget for your first-time homebuyer experience: <a href="https://kingstonrem.com/essential-tips-for-first-time-homebuyers-in-the-boston-housing-market/">Essential Tips for First Time Boston Homebuyers</a> </li>
+      <li>Here is an ultimate guide to Boston home-buying and renting intended for students and young individuals: <a href="https://kingstonrem.com/the-ultimate-guide-to-student-rentals-in-cambridge-what-you-need-to-know/">Ultimate Guide to Student Homebuying and Rentals</a></li>
+      <li>This resource provides Boston first-time homebuyers with a great towards a downpayment: <a href="https://www.boston.gov/first-time-homebuyer-program">First-time Homebuyers Program</a></li>
+    </ol>
+  </div>
+
 </main>
 
 <style>
