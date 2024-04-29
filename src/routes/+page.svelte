@@ -3,7 +3,6 @@
 <script>
   import LuxuryApartment from './LuxuryApartment.svelte';
   import SquareFootage from './SquareFootage.svelte';
-  import Motivation from './Motivation.svelte';
   import HomeBuyers from './HomeBuyersGuide.svelte';
   import PredictiveTool from './PredictiveTool.svelte';
 </script>
