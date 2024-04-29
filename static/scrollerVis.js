@@ -1,4 +1,4 @@
-class ScrollerVis {
+export class ScrollerVis {
 
     constructor(_config, _data) {
       this.config = {

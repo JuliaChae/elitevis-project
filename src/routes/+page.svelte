@@ -4,6 +4,7 @@
   import LuxuryApartment from './LuxuryApartment.svelte';
   import SquareFootage from './SquareFootage.svelte';
   import Motivation from './Motivation.svelte';
+  import HomeBuyers from './HomeBuyersGuide.svelte';
 </script>
 
 <main>
@@ -21,6 +22,7 @@
   </div>
   <LuxuryApartment />
   <SquareFootage />
+  <HomeBuyers />
 </main>
 
 <style>

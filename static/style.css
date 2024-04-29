@@ -1,6 +1,7 @@
 :root {
     --background-color: #1f1f1f; /* Dark mode background color */
-    --primary-color: #2f2f2f; /* Dark gray for boxes */
+    /* --primary-color: #2f2f2f; Dark gray for boxes */
+    --primary-color: #1f1f1f; /*Dark gray for boxes */
     --accent-color: #ffd700; /* Honey yellow / gold */
     --text-color-white: #ffffff; /* Gold text color */
     --font-family: 'Gill Sans', sans-serif; /* Roboto font */
@@ -184,6 +185,24 @@ nav a:hover {
 
 /* new from hiking page */
   
+body {
+font-family: 'Noto Sans JP', sans-serif;
+font-size: 16px;
+font-weight: 400;
+background: #f7f7f7;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color-white);
+    line-height: 1.5;
+    margin: 0;
+    padding: 10ch;
+    max-width: 100ch;
+    margin-inline: auto;
+}
+
 .page {
 margin: 2rem auto;
 max-width: 50rem;
@@ -194,8 +213,11 @@ position: relative;
 margin-bottom: 100px;
 }
 
+/* this makes the vis appear/disappear */
 #vis {
-position: fixed;
+position: sticky;
+top: 68px;
+/* position: fixed; */
 width: 400px;
 }
 
@@ -219,5 +241,6 @@ font-size: 1.2rem;
 }
 
 .chart-label {
-font-size: .7rem;
+font-size: 1rem;
+color: var(--accent-color);
 }
