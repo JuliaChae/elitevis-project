@@ -66,11 +66,11 @@
 
   <div class="text-container">
     <h1>Resources for New Homebuyers</h1>
-    <p>Learn More About Buying in Boston with these resources (we’ve compiled these resources to be especially user-friendly navigating the Boston housing market!)</p>
+    <p>Learn More About Buying in Boston with these resources (we’ve compiled these resources to be especially user-friendly for first-time home buyers navigating the Boston housing market!)</p>
     <ol>
-      <li>Here is a great resource that lets you set a realistic budget for your first-time homebuyer experience: https://kingstonrem.com/essential-tips-for-first-time-homebuyers-in-the-boston-housing-market/</li>
-      <li>Here is an ultimate guide to Boston home-buying and renting intended for students and young individuals: https://kingstonrem.com/the-ultimate-guide-to-student-rentals-in-cambridge-what-you-need-to-know/</li>
-      <li>This resource provides Boston first-time homebuyers with a great towards a downpayment: https://www.boston.gov/first-time-homebuyer-program</li>
+      <li>Here is a great resource that lets you set a realistic budget for your first-time homebuyer experience: <a href="https://kingstonrem.com/essential-tips-for-first-time-homebuyers-in-the-boston-housing-market/"> </a> </li>
+      <li>Here is an ultimate guide to Boston home-buying and renting intended for students and young individuals: <a href="https://kingstonrem.com/the-ultimate-guide-to-student-rentals-in-cambridge-what-you-need-to-know/"> </a></li>
+      <li>This resource provides Boston first-time homebuyers with a great towards a downpayment: <a href= "https://www.boston.gov/first-time-homebuyer-program"> </a></li>
     </ol>
   </div>
 
