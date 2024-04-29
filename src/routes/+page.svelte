@@ -5,6 +5,16 @@
   import SquareFootage from './SquareFootage.svelte';
   import Motivation from './Motivation.svelte';
   import HomeBuyers from './HomeBuyersGuide.svelte';
+  import Transition1 from './Minigame2Transition.svelte';
+  import Transition2 from './DataComicTransition.svelte';
+
+  function handleFileUpload(event) {
+    const file = event.target.files[0];
+    if (file) {
+      // Perform further operations with the selected file
+      console.log("Selected file:", file);
+    }
+  }
 </script>
 
 <main>
@@ -13,15 +23,11 @@
         <p class="team-name">EliteVisTeam</p>
         <hr class="separator">
     </div>
-  <div class="subtitle-page">
-    <h1>Motivation</h1>
-  </div>
   <Motivation />
-  <div class="subtitle-page">
-    <h1>Boston Housing Market Mini Games</h1>
-  </div>
-  <LuxuryApartment />
   <SquareFootage />
+  <Transition1 />
+  <LuxuryApartment />
+  <Transition2 />
   <HomeBuyers />
 </main>
 

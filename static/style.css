@@ -1,6 +1,7 @@
 :root {
     --background-color: #1f1f1f; /* Dark mode background color */
     /* --primary-color: #2f2f2f; Dark gray for boxes */
+    --gray-background: #2f2f2f; 
     --primary-color: #1f1f1f; /*Dark gray for boxes */
     --accent-color: #ffd700; /* Honey yellow / gold */
     --text-color-white: #ffffff; /* Gold text color */
@@ -92,30 +93,32 @@ nav a:hover {
     box-sizing: border-box;
 }
 
-.motivation-container {
+.text-container {
     background-color: var(--background-color);
     padding: 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.motivation-container h1 {
-    font-family: var(--font-family);
-    color: var(--accent-color);
-    /* text-align: center; */
-    margin-bottom: 20px;
-    font-size: 32px;
-}
-
-.motivation-container p {
-    font-family: var(--font-family);
-    color: var(--accent-color);
-    font-size: 16px;
-    line-height: 1.5;
     margin-bottom: 10px;
 }
 
+.text-container h1 {
+    font-family: var(--font-family);
+    color: var(--accent-color);
+    /* text-align: center; */
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.text-container p {
+    font-family: var(--font-family);
+    color: var(--text-color-white);
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+#caption p {
+    color: var(--accent-color);
+}
 
 .container {
     max-width: 800px;
@@ -124,6 +127,10 @@ nav a:hover {
     background-color: var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#minigame {
+    background-color: var(--gray-background);
 }
 
 .container h1 {
