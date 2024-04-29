@@ -1,14 +1,25 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" href="%sveltekit.assets%/style.css" />
-		<script src="%sveltekit.assets%/global.js" type="module"></script>
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+	<!-- <head>
+		<title>Scrollytelling using D3 and Waypoints</title>
+		<link rel="icon" href="data:;base64,iVBORwOKGO=" />
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+	</head> -->
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="%sveltekit.assets%/style.css" />
+	<link rel="stylesheet" href="style.css">
+	<script src="%sveltekit.assets%/global.js" type="module"></script>
+	<!-- <script src="%sveltekit.assets%/d3.v6.min.js" charset="utf-8"></script> -->
+	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	%sveltekit.head%
+</head>
+<body data-sveltekit-preload-data="hover">
+	<script src="/d3.v6.min.js"></script>
+	<script src="%sveltekit.assets%/noframework.waypoints.min.js" type="module"></script>
+	<script src="%sveltekit.assets%/scrollerVis.js" type="module"></script>
+	<div style="display: contents">%sveltekit.body%</div>
+</body>
 </html>

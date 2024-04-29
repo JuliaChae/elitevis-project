@@ -1,6 +1,8 @@
 :root {
     --background-color: #1f1f1f; /* Dark mode background color */
-    --primary-color: #2f2f2f; /* Dark gray for boxes */
+    /* --primary-color: #2f2f2f; Dark gray for boxes */
+    --gray-background: #2f2f2f; 
+    --primary-color: #1f1f1f; /*Dark gray for boxes */
     --accent-color: #ffd700; /* Honey yellow / gold */
     --text-color-white: #ffffff; /* Gold text color */
     --font-family: 'Gill Sans', sans-serif; /* Roboto font */
@@ -13,8 +15,8 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 10ch;
-    max-width: 100ch;
     margin-inline: auto;
+    width: 90%;
 }
 
 .title-page {
@@ -29,7 +31,7 @@ body {
 }
 
 .title-page .separator {
-    width: 80%;
+    /* width: 80%; */
     height: 1px; /* Add height property to ensure the separator is visible */
     background-color: var(--accent-color); /* Set background color instead of border */
     margin: 50px auto;
@@ -91,38 +93,44 @@ nav a:hover {
     box-sizing: border-box;
 }
 
-.motivation-container {
+.text-container {
     background-color: var(--background-color);
     padding: 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.motivation-container h1 {
-    font-family: var(--font-family);
-    color: var(--accent-color);
-    /* text-align: center; */
-    margin-bottom: 20px;
-    font-size: 32px;
-}
-
-.motivation-container p {
-    font-family: var(--font-family);
-    color: var(--accent-color);
-    font-size: 16px;
-    line-height: 1.5;
     margin-bottom: 10px;
 }
 
+.text-container h1 {
+    font-family: var(--font-family);
+    color: var(--accent-color);
+    /* text-align: center; */
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.text-container p {
+    font-family: var(--font-family);
+    color: var(--text-color-white);
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+#caption p {
+    color: var(--accent-color);
+}
 
 .container {
-    max-width: 800px;
+    /* max-width: 100%; */
     margin: 50px auto;
     padding: 20px;
     background-color: var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#minigame {
+    background-color: var(--gray-background);
 }
 
 .container h1 {
@@ -134,7 +142,7 @@ nav a:hover {
 }
 
 .container select {
-    width: 100%;
+    /* width: 100%; */
     padding: 10px;
     margin-bottom: 20px;
     border: 2px solid var(--accent-color);
@@ -146,7 +154,7 @@ nav a:hover {
 }
 
 .container input[type="number"] {
-    width: calc(100% - 80px);
+    /* width: calc(100% - 80px); */
     padding: 10px;
     margin-right: 10px;
     border: 2px solid var(--accent-color);
@@ -180,4 +188,84 @@ nav a:hover {
     font-size: 14px;
     color: var(--accent-color);
     text-align: right;
+}
+
+/* new from hiking page */
+  
+body {
+font-family: 'Noto Sans JP', sans-serif;
+font-size: 16px;
+font-weight: 400;
+background: #f7f7f7;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color-white);
+    line-height: 1.5;
+    margin: 0;
+    padding: 10ch;
+    width: 80%;
+    /* max-width: 100ch; */
+    margin-inline: auto;
+}
+
+.page {
+    margin: 2rem auto;
+}
+
+.container {
+position: relative;
+margin-bottom: 100px;
+}
+
+/* this makes the vis appear/disappear */
+#vis {
+position: sticky;
+top: 68px;
+/* position: fixed; */
+width: 400px;
+}
+
+#prose {
+margin-left: 400px;
+}
+#prose .step {
+height: 500px;
+}
+
+.count {
+    padding: 0px 4px;
+    background: #333;
+    font-weight: 600;
+    border-radius: 8px;
+    margin: 0 4px;
+}
+
+.step {
+font-size: 1.2rem;
+}
+
+.chart-label {
+font-size: 1rem;
+color: var(--accent-color);
+}
+
+.container, .text-container {
+    width: 90%; /* Set the width to 90% of the body width */
+    max-width: 800px; /* Set a maximum width to prevent containers from becoming too wide */
+    margin: 0 auto; /* Center the containers horizontally */
+}
+
+/* Adjust the width of the predictive container */
+#predictive {
+    width: 80%; /* Set the width to 80% of the body width */
+    max-width: none; /* Remove the maximum width constraint */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.container img {
+    max-width: 100%; /* Ensure the image does not exceed the width of its container */
+    height: auto; /* Allow the height to adjust proportionally based on the width */
 }
