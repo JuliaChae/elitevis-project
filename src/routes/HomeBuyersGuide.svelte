@@ -209,8 +209,8 @@
 </script>
 
 <div class="page">
-    <h1>A Homebuyer's Guide to Investor Activity in Boston</h1>
     <div class="container">
+        <h1>A Homebuyer's Guide to Investor Activity in Boston</h1>
         <div id="vis"></div>
         <div id="prose">
             <div class="step" id="step0">There are a total of <span class="count" id="hikes-count"></span> zipcodes that have a median home price at over one million dollars, ten times that of the average Boston household income ($120,000).</div>

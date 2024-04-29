@@ -5,8 +5,6 @@
   import SquareFootage from './SquareFootage.svelte';
   import Motivation from './Motivation.svelte';
   import HomeBuyers from './HomeBuyersGuide.svelte';
-  import Transition1 from './Minigame2Transition.svelte';
-  import Transition2 from './DataComicTransition.svelte';
   import PredictiveTool from './PredictiveTool.svelte';
 </script>
 
@@ -53,7 +51,7 @@
   <div class="container">
     <img src = "public/PrinceofDarkness_Comic.jpg" alt="" style="width: 1200px;"/>
   </div>
-  
+
   <div class="text-container">
     <p>In the present-day Boston housing market, an annual income of nearly $200,000 is necessary for a median-priced home (Homes for Profit). Through analyzing residential sales transactions, our research finds that 21% of residential properties sold in Greater Boston in the period from 2004 through 2018 were purchased by an investor (Homes for Profit).</p>
   </div>
