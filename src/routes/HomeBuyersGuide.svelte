@@ -57,7 +57,7 @@
 
         // Initialize scales
         vis.colorScale = d3.scaleOrdinal()
-            .range(['#B5a291', '#F3db76', '#B5a291'])
+            .range(['#ccc', '#ffd700', '#ccc'])
             .domain(['default','highlighted', 'inactive']);
     
         // Calculate number of columns and rows for the grid layout
@@ -141,9 +141,10 @@
             .attr('class', 'chart-label chart-label-name')
             .attr('text-anchor', 'end')
             .attr('dy', '0.35em')
-            .attr('x', -3)
+            .attr('x', -7)
             .attr('y', vis.config.barHeight/2)
-            .text(d => d.trail);
+            .text(d => d.trail)
+            .style('fill', 'white');
     
         // vis.textG.append('text')
         //     .attr('class', 'chart-label chart-label-val')

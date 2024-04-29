@@ -45,7 +45,7 @@
 </style>
 
 <main>
-  <div class="container">
+  <div class="container" id="minigame">
     <h1>How many grad students do you think one luxury unit can support?</h1>
 
     <select on:change={updateSelectedApartment}>

@@ -55,7 +55,7 @@ export class ScrollerVis {
 
       // Initialize scales
       vis.colorScale = d3.scaleOrdinal()
-          .range(['#B5a291', '#F3db76', '#B5a291'])
+          .range(['#dddddd', '#ffd700', '#dddddd'])
           .domain(['default','highlighted', 'inactive']);
   
       // Calculate number of columns and rows for the grid layout

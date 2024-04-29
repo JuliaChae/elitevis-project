@@ -1,14 +1,14 @@
 <!-- Motivation.svelte -->
-<div class="motivation-container">
-  <h1>Introduction</h1>
-  <p>Welcome to our webpage! We aim to provide valuable insights into luxury apartments and real estate trends. Explore our interactive tools below to learn more about luxury apartments and square footage equivalents in different cities.</p>
-  <p>Whether you're a real estate enthusiast, a prospective buyer, or simply curious about luxury living, we've got you covered with data-driven analysis and engaging visualizations. Dive in and discover!</p>
+<div class="text-container">
+  <h1>Are you interested in buying in Boston?</h1>
+  <p>Welcome! As one of the oldest cities in America, Boston is a charming city with over 300 years of history. The city is home to 
+  beautiful cobblestone streets, historic sites, world-clas educational institutions, as well as over 20 distinct neighborhoods, each 
+  with its own characteristics and charm. In this web page, we will help you gain a better understanding of the Boston housing market,
+   with a specific dive into the spculative investor activites across the city. </p>
 </div>
 
-<div class="motivation-container">
-  <h1>Background</h1>
-  <p>Welcome to our webpage! We aim to provide valuable insights into luxury apartments and real estate trends. Explore our interactive tools below to learn more about luxury apartments and square footage equivalents in different cities.</p>
-  <p>Whether you're a real estate enthusiast, a prospective buyer, or simply curious about luxury living, we've got you covered with data-driven analysis and engaging visualizations. Dive in and discover!</p>
+<div class="text-container" id="caption">
+  <p>Check out this game to see how Boston compares to other metropolitan cities in the US!</p>
 </div>
 
 <style>
