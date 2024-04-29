@@ -10,7 +10,7 @@
 
 <main>
     <div class="title-page">
-        <h1>Understanding Boston's Speculative Investment Landscape</h1>
+        <h1>Understanding Boston's<br>Speculative Investment Landscape</h1>
         <p class="team-name">EliteVisTeam</p>
         <hr class="separator">
     </div>

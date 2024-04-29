@@ -14,8 +14,8 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 10ch;
-    max-width: 100ch;
     margin-inline: auto;
+    width: 90%;
 }
 
 .title-page {
@@ -30,7 +30,7 @@ body {
 }
 
 .title-page .separator {
-    width: 80%;
+    /* width: 80%; */
     height: 1px; /* Add height property to ensure the separator is visible */
     background-color: var(--accent-color); /* Set background color instead of border */
     margin: 50px auto;
@@ -118,12 +118,12 @@ nav a:hover {
 
 
 .container {
-    max-width: 800px;
+    /* max-width: 100%; */
     margin: 50px auto;
     padding: 20px;
     background-color: var(--primary-color);
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .container h1 {
@@ -135,7 +135,7 @@ nav a:hover {
 }
 
 .container select {
-    width: 100%;
+    /* width: 100%; */
     padding: 10px;
     margin-bottom: 20px;
     border: 2px solid var(--accent-color);
@@ -147,7 +147,7 @@ nav a:hover {
 }
 
 .container input[type="number"] {
-    width: calc(100% - 80px);
+    /* width: calc(100% - 80px); */
     padding: 10px;
     margin-right: 10px;
     border: 2px solid var(--accent-color);
@@ -199,13 +199,13 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 10ch;
-    max-width: 100ch;
+    width: 80%;
+    /* max-width: 100ch; */
     margin-inline: auto;
 }
 
 .page {
-margin: 2rem auto;
-max-width: 50rem;
+    margin: 2rem auto;
 }
 
 .container {
@@ -229,11 +229,11 @@ height: 500px;
 }
 
 .count {
-padding: 0px 4px;
-background: #efe9e9;
-font-weight: 600;
-border-radius: 8px;
-margin: 0 4px;
+    padding: 0px 4px;
+    background: #333;
+    font-weight: 600;
+    border-radius: 8px;
+    margin: 0 4px;
 }
 
 .step {

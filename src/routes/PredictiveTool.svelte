@@ -613,7 +613,7 @@
   <style>
 	.container {
 	  display: flex;
-	  border: 1px solid white;
+	  border: 1px solid transparent;
 	}
   
 	.column {
