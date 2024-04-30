@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 10ch;
     margin-inline: auto;
-    width: 90%;
+    width: 80%;
 }
 
 .title-page {
@@ -206,7 +206,7 @@ body {
     line-height: 1.5;
     margin: 0;
     padding: 10ch;
-    width: 80%;
+    width: 100%;
     /* max-width: 100ch; */
     margin-inline: auto;
 }
@@ -254,7 +254,7 @@ color: var(--accent-color);
 
 .container, .text-container {
     width: 90%; /* Set the width to 90% of the body width */
-    max-width: 800px; /* Set a maximum width to prevent containers from becoming too wide */
+    max-width: 900px; /* Set a maximum width to prevent containers from becoming too wide */
     margin: 0 auto; /* Center the containers horizontally */
 }
 

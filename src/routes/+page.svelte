@@ -20,7 +20,7 @@
       <p>which makes finding an affordable home tougher than ever for the average Bostonion.</p>
 
       <p>In the present-day Boston housing market, an annual income of nearly $200,000 is necessary for a median-priced home (Homes for Profit).
-        Luxury buildings are being developed up all across Boston, but many of these buildings are home to part-time residents and foreign investors: not full-time Bostonions.</p>
+        Luxury buildings are being developed all across Boston, but many of these buildings are home to part-time residents and foreign investors - not full-time Bostonions.</p>
       
       <p>This data comic shows a story of a young boy Timmy and his mother, as they stroll by the Four Seasons One Dalton. 
         Timmy notices immediately that many of the windows in the building are dark. 
@@ -30,7 +30,7 @@
     </div>
 
     <div class="container">
-      <img src = "public/PrinceofDarkness_Comic.jpg" alt="" style="width: 1200px;"/>
+      <img src = "PrinceofDarkness_Comic.jpg" alt="" style="width: 1200px;"/>
     </div>
 
     <div class="text-container" id="caption">
@@ -40,7 +40,7 @@
     <h1>Are you interested in buying in Boston?</h1>
 
     <p>You've come to the right place! In this web page, we will help you gain a better understanding of the Boston housing market,
-      with a specific dive into the spculative investor activites across the city. </p>
+      with a specific dive into the speculative investor activities across the city.</p>
 
     <p>Are you new to Boston? Let's start by comparing Boston to some other famous cities in the U.S.</p>
   </div>
@@ -82,10 +82,10 @@
   <div class="text-container">
     <h1>Resources for New Homebuyers</h1>
     <p>Learn More About Buying in Boston with these resources (we’ve compiled these resources to be especially user-friendly for first-time home buyers navigating the Boston housing market!)</p>
-    <ol>
-      <li>Here is a great resource that lets you set a realistic budget for your first-time homebuyer experience: <a href="https://kingstonrem.com/essential-tips-for-first-time-homebuyers-in-the-boston-housing-market/">Essential Tips for First Time Boston Homebuyers</a> </li>
-      <li>Here is an ultimate guide to Boston home-buying and renting intended for students and young individuals: <a href="https://kingstonrem.com/the-ultimate-guide-to-student-rentals-in-cambridge-what-you-need-to-know/">Ultimate Guide to Student Homebuying and Rentals</a></li>
-      <li>This resource provides Boston first-time homebuyers with a great towards a downpayment: <a href="https://www.boston.gov/first-time-homebuyer-program">First-time Homebuyers Program</a></li>
+    <ol style="font-size: 26px;">
+      <li>Here is a great resource that lets you set a realistic budget for your first-time homebuyer experience:<br> <a href="https://kingstonrem.com/essential-tips-for-first-time-homebuyers-in-the-boston-housing-market/">Essential Tips for First Time Boston Homebuyers</a> </li>
+      <li>Here is an ultimate guide to Boston home-buying and renting intended for students and young individuals:<br> <a href="https://kingstonrem.com/the-ultimate-guide-to-student-rentals-in-cambridge-what-you-need-to-know/">Ultimate Guide to Student Homebuying and Rentals</a></li>
+      <li>This resource provides Boston first-time homebuyers with a great towards a downpayment:<br> <a href="https://www.boston.gov/first-time-homebuyer-program">First-time Homebuyers Program</a></li>
     </ol>
   </div>
 
@@ -93,4 +93,9 @@
 
 <style>
   /* Include global styles here if needed */
+  /* Add more space between paragraphs */
+  .text-container p {
+      margin-bottom: 30px; /* Adjust as needed */
+      zoom: 160%;
+    }
 </style>
