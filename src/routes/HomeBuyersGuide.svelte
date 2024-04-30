@@ -213,11 +213,11 @@
         <h1>A Homebuyer's Guide to Investor Activity in Boston</h1>
         <div id="vis"></div>
         <div id="prose">
-            <div class="step" id="step0">There are a total of <span class="count" id="hikes-count"></span> zipcodes that have a median home price at over one million dollars, ten times that of the average Boston household income ($120,000).</div>
-            <div class="step" id="step1"><span class="count" id="easy-hikes-count"></span> counties where the investor rate is above 30%.</div>
-            <div class="step" id="step2"><span class="count" id="difficult-hikes-count"></span> counties where the investment activity has gone up significantly (>15%) in the past 5 years.</div>
-            <div class="step" id="step3">The county with the highest investment activity: <b>Back Bay</b> (zipcode 02199). <br></div>
-            <div class="step" id="step4">The top 10 counties with the highest investment activity.</div>
+            <div class="step" id="step0">There are a total of <span class="count" id="hikes-count"></span> census tracts that have a median home price at over 500K dollars, five times that of the average Boston household income ($100,000).</div>
+            <div class="step" id="step1"><span class="count" id="easy-hikes-count"></span> census tracts where the investor rate is above 30%.</div>
+            <div class="step" id="step2"><span class="count" id="difficult-hikes-count"></span> census tracts where the investment activity has gone up significantly (>15%) in the past 5 years.</div>
+            <div class="step" id="step3">The census tract with the highest investment activity: <b>Back Bay</b> (zipcode 02199). <br></div>
+            <div class="step" id="step4">The top 10 neighborhoods with the highest investment activity.</div>
         </div>
     </div>
 </div>

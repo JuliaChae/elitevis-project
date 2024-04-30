@@ -39,6 +39,7 @@
   <h1>How many square ft is equivalent to 500 sq ft. in Boston?</h1>
   <div class="box">
     <select bind:value={selectedCity}>
+      <option value="">Select City</option>
       {#each citys as city}
         <option value={city}>{city}</option>
       {/each}
