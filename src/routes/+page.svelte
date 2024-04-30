@@ -76,7 +76,7 @@
     <p>As a next step, you may be curious about investment activity and price trends for the zipcode you are interested in buying in. In order to allow users to see the exact zip code they would like to buy in, we allow for the map to highlight zip codes of interest and focus on the recent speculative investment trends.</p>
   </div>
   <div class="container">
-    <img src = "public/map.png" alt="" style="width: 1200px;"/>
+    <img src = "map.png" alt="" style="width: 1200px;"/>
   </div>
 
   <div class="text-container">
