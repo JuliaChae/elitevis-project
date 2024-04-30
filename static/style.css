@@ -105,13 +105,13 @@ nav a:hover {
     color: var(--accent-color);
     /* text-align: center; */
     margin-bottom: 10px;
-    font-size: 32px;
+    font-size: 26px;
 }
 
 .text-container p {
     font-family: var(--font-family);
     color: var(--text-color-white);
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.5;
     margin-bottom: 5px;
 }
@@ -134,7 +134,7 @@ nav a:hover {
 }
 
 .container h1 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 20px;
@@ -253,7 +253,7 @@ color: var(--accent-color);
 }
 
 .container, .text-container {
-    width: 90%; /* Set the width to 90% of the body width */
+    width: 60%; /* Set the width to 90% of the body width */
     max-width: 900px; /* Set a maximum width to prevent containers from becoming too wide */
     margin: 0 auto; /* Center the containers horizontally */
 }
@@ -268,4 +268,11 @@ color: var(--accent-color);
 .container img {
     max-width: 100%; /* Ensure the image does not exceed the width of its container */
     height: auto; /* Allow the height to adjust proportionally based on the width */
+}
+
+.spacer {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    /* Optionally, you can add margins to control spacing */
+    margin-right: 20px; /* Example of adding right margin */
 }
