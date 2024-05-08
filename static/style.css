@@ -3,7 +3,7 @@
     /* --primary-color: #2f2f2f; Dark gray for boxes */
     --gray-background: #2f2f2f; 
     --primary-color: #1f1f1f; /*Dark gray for boxes */
-    --accent-color: #ffd700; /* Honey yellow / gold */
+    --accent-color: #fef1a6; /* Honey yellow / gold */
     --text-color-white: #ffffff; /* Gold text color */
     --font-family: 'Gill Sans', sans-serif; /* Roboto font */
 }
@@ -237,14 +237,14 @@ height: 500px;
 
 .count {
     padding: 0px 4px;
-    background: #333;
+    background: #744700;
     font-weight: 600;
     border-radius: 8px;
     margin: 0 4px;
 }
 
 .step {
-font-size: 1.2rem;
+font-size: 1.75rem;
 }
 
 .chart-label {

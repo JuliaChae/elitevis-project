@@ -46,7 +46,7 @@
 
 <main>
   <div class="container" id="minigame">
-    <h1>How many grad students do you think one luxury unit can support?</h1>
+    <h1>How many grad students' rents do you think the sale price of one luxury apartment will pay for?</h1>
 
     <select on:change={updateSelectedApartment}>
       <option value="">Select Luxury Apartment</option>

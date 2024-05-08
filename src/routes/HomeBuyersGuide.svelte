@@ -57,7 +57,7 @@
 
         // Initialize scales
         vis.colorScale = d3.scaleOrdinal()
-            .range(['#ccc', '#ffd700', '#ccc'])
+            .range(['#744700', '#ffd700', '#744700'])
             .domain(['default','highlighted', 'inactive']);
     
         // Calculate number of columns and rows for the grid layout
