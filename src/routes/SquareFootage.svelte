@@ -53,7 +53,7 @@
   }
 </script>
 
-<div class="container">
+<div class="container" id="minigame">
   <h1>how many square ft is equivalent to 500 sq ft. in Boston?</h1>
   <select bind:value={selectedCity}>
     {#each citys as city}
