@@ -94,7 +94,7 @@
 
 
   async function loadChartData() {
-    const data = await d3.csv('../public/price.csv', d => ({
+    const data = await d3.csv('data/price.csv', d => ({
       year: +d.year,
       zip: d.zip.padStart(5, '0'),  // zipcodes in price.csv are different
       price: +d.price,
@@ -241,7 +241,7 @@
 <!-- <script>
   import { onMount } from 'svelte';
   import * as d3 from 'd3';
-  import geoData from '../../public/ma_massachusetts_zip_codes_geo.min.json';
+  import geoData from 'data/ma_massachusetts_zip_codes_geo.min.json';
 
   let svgMap, svgLineChart1, svgLineChart2;
   let selectedZipCode = "02116";
@@ -256,7 +256,7 @@
   ]);
 
   async function loadChartData() {
-    const data = await d3.csv('../public/price.csv', d => ({
+    const data = await d3.csv('data/price.csv', d => ({
       year: +d.year,
       zip: d.zip.padStart(5, '0'),  // zipcodes are differnt in price.csv
       price: +d.price,
