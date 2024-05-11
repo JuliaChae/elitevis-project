@@ -45,7 +45,7 @@
   <div class="title-page">
       <h1>Understanding Boston's<br>Speculative Investment Landscape</h1>
       <p class="team-name">EliteVisTeam</p>
-      <p class="team-name">Jenny, Shelley, Kimia, Julia</p>
+      <p class="team-name">Jenny Huang, Shelley Choi, Kimia Hamidieh, Julia Chae</p>
       <hr class="separator">
   </div>
 
@@ -155,7 +155,7 @@
   <PredictiveTool />
 
   <div class="spacer"></div>
-  
+
   <div class="text-container" id="caption">
     <p>Thank you for exploring our visualization! We hope that you were able to learn something new about the Boston housing market and the speculative investment trends across the city. Before you go, we have gathered some resources for new homebuyers that we encourage you to check out! Please note that this list may not be complete.</p>
   </div>
