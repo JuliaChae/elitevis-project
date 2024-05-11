@@ -4,7 +4,7 @@
   import geoData from '../../public/ma_massachusetts_zip_codes_geo.min.json';
 
   let svgMap, svgLineChart1;
-  let selectedZipCode = "02116";
+  let selectedZipCode = null;
 
   $: if (selectedZipCode) {
     updateLineChart(selectedZipCode);
@@ -51,6 +51,20 @@
       })
       .append('title')
       .text(d => `ZIP Code: ${d.properties.ZCTA5CE10}`);
+      
+    const zoom = d3.zoom()
+      .scaleExtent([1, 8])  // limit the scale from 1x to 8x
+      .on('zoom', ({transform}) => {
+        svgMap.selectAll('path').attr('transform', transform); // apply zoom
+      });
+
+    d3.select(svgMap)
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .call(zoom)
+      .selectAll('path')
+      .data(filteredData.features)
+      .enter()
+      .append('path')
   }
 
 
@@ -58,7 +72,8 @@
     const data = await d3.csv('../public/price.csv', d => ({
       year: +d.year,
       zip: d.zip.padStart(5, '0'),  // zipcodes in price.csv are different
-      value: +d.price
+      value: +d.price,
+      invest: +d.perc_top_invested * 100
     }));
 
     lineChartData = d3.group(data, d => d.zip);
@@ -88,6 +103,15 @@
 
     svgElement.selectAll('*').remove(); // Clear previous contents
 
+    // title for the line chart
+    svgElement.append("text")
+      .attr("x", width / 2)
+      .attr("y", margin.top)
+      .attr("text-anchor", "middle")
+      .style("font-size", "16px")
+      .style("fill", "#ccc")
+      .text(`Price Trends for ZIP: ${zipCode}`);
+
     svgElement.append('g')
       .attr('transform', `translate(0,${height - margin.bottom})`)
       .call(d3.axisBottom(x).tickFormat(d3.format('d')));
@@ -106,18 +130,28 @@
       .attr('stroke', 'yellow')
       .attr('stroke-width', 3)
       .attr('d', line);
+
+
   }
 
   onMount(async () => {
     await loadChartData();
     initializeMap();
-    updateLineChart(selectedZipCode); // Initial update with default or null
+    updateLineChart(selectedZipCode);
   });
 
 </script>
 
-<svg bind:this={svgMap} width="1000" height="600" style="width: 100%; height: auto; border: 1px solid black;"></svg>
-<svg bind:this={svgLineChart1}></svg>
+
+<main>
+  <p>Click on a ZIP code area on the map to see the price trends and investor activity.</p>
+  <div style="position: relative; display: flex; justify-content: space-between;">
+    <svg bind:this={svgMap} width="1000" height="600" style="width: 50%; height: auto; border: 1px solid black;"></svg>
+  </div>
+</main>
+
+<!-- <svg bind:this={svgMap} width="1000" height="600" style="width: 100%; height: auto; border: 1px solid black;"></svg>
+<svg bind:this={svgLineChart1}></svg> -->
 
 
 
