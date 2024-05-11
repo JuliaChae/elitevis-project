@@ -3,7 +3,7 @@
   import * as d3 from 'd3';
   import geoData from '../../public/ma_massachusetts_zip_codes_geo.min.json';
 
-  let svgMap, svgLineChart1;
+  let svgMap, svgLineChart1, svgLineChart2;
   let selectedZipCode = null;
 
   $: if (selectedZipCode) {
@@ -52,19 +52,19 @@
       .append('title')
       .text(d => `ZIP Code: ${d.properties.ZCTA5CE10}`);
       
-    const zoom = d3.zoom()
-      .scaleExtent([1, 8])  // limit the scale from 1x to 8x
-      .on('zoom', ({transform}) => {
-        svgMap.selectAll('path').attr('transform', transform); // apply zoom
-      });
+    // const zoom = d3.zoom()
+    //   .scaleExtent([1, 8])  // limit the scale from 1x to 8x
+    //   .on('zoom', ({transform}) => {
+    //     svgMap.selectAll('path').attr('transform', transform); // apply zoom
+    //   });
 
-    d3.select(svgMap)
-      .attr('viewBox', `0 0 ${width} ${height}`)
-      .call(zoom)
-      .selectAll('path')
-      .data(filteredData.features)
-      .enter()
-      .append('path')
+    // d3.select(svgMap)
+    //   .attr('viewBox', `0 0 ${width} ${height}`)
+    //   .call(zoom)
+    //   .selectAll('path')
+    //   .data(filteredData.features)
+    //   .enter()
+    //   .append('path')
   }
 
 
@@ -72,7 +72,7 @@
     const data = await d3.csv('../public/price.csv', d => ({
       year: +d.year,
       zip: d.zip.padStart(5, '0'),  // zipcodes in price.csv are different
-      value: +d.price,
+      price: +d.price,
       invest: +d.perc_top_invested * 100
     }));
 
@@ -86,19 +86,37 @@
       return;
     }
     const data = lineChartData.get(zipCode).sort((a, b) => a.year - b.year);
+
+    // drawLineChart(svgLineChart1, data, 'price');
+
+    // const configs = [
+    //   { svg: svgLineChart1, value: 'price' },
+    //   // { svg: svgLineChart2, value: 'invest' }
+    // ];
+    configs.forEach(({ svg, value }) => drawLineChart(svg, data, value, zipCode));
+  }
+
+  function drawLineChart(svgLineChart, data, valueField, zipCode) {
+    console.log("Drawing chart for:", valueField, "with data:", data);
     const width = 460, height = 250;
     const margin = { top: 20, right: 20, bottom: 30, left: 50 };
-    const svgElement = d3.select(svgLineChart1)
+    
+    const svgElement = d3.select(svgLineChart)
       .attr('viewBox', `0 0 ${width} ${height}`)
       .style('width', '100%')
       .style('height', 'auto');
+
+    if (!svgElement.node()) {
+        console.error('SVG Element not found:', svgLineChart);
+        return;
+    }
 
     const x = d3.scaleLinear()
       .domain(d3.extent(data, d => d.year))
       .range([margin.left, width - margin.right]);
 
     const y = d3.scaleLinear()
-      .domain([0, d3.max(data, d => d.value)])
+      .domain([0, d3.max(data, d => d.price)])
       .range([height - margin.bottom, margin.top]);
 
     svgElement.selectAll('*').remove(); // Clear previous contents
@@ -122,7 +140,7 @@
 
     const line = d3.line()
       .x(d => x(d.year))
-      .y(d => y(d.value));
+      .y(d => y(d.price));
 
     svgElement.append('path')
       .datum(data)
@@ -130,8 +148,6 @@
       .attr('stroke', 'yellow')
       .attr('stroke-width', 3)
       .attr('d', line);
-
-
   }
 
   onMount(async () => {
@@ -146,7 +162,12 @@
 <main>
   <p>Click on a ZIP code area on the map to see the price trends and investor activity.</p>
   <div style="position: relative; display: flex; justify-content: space-between;">
-    <svg bind:this={svgMap} width="1000" height="600" style="width: 50%; height: auto; border: 1px solid black;"></svg>
+    <svg bind:this={svgMap} width="8000" height="100" style="width: 100%; height: auto; border: 1px solid black;"></svg>
+    <svg bind:this={svgLineChart1} style="width: 100%; height: 300px;"></svg>
+    <!-- <div style="width: 50%;"> -->
+      <!-- <svg bind:this={svgLineChart1} style="width: 100%; height: 300px;"></svg> -->
+      <!-- <svg bind:this={svgLineChart2} style="width: 100%; height: 300px;"></svg> -->
+    <!-- </div> -->
   </div>
 </main>
 
