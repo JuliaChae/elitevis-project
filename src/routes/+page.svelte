@@ -1,10 +1,43 @@
 <!-- App.svelte -->
 
 <script>
+  import { onMount } from 'svelte';
+  import * as d3 from 'd3';
   import LuxuryApartment from './LuxuryApartment.svelte';
   import SquareFootage from './SquareFootage.svelte';
   import HomeBuyers from './HomeBuyersGuide.svelte';
   import PredictiveTool from './PredictiveTool.svelte';
+  import BostonZipCodeMapComplete from './BostonZipCodeMapComplete.svelte';
+  // import BostonZipCodeMap from './BostonZipCodeMap.svelte';
+  // import LineChart from './LineChart.svelte';
+  // import { writable } from 'svelte/store';
+  
+  // let selectedZipCode = writable(null);
+  // let lineChartData = writable([]);
+
+  // onMount(async () => {
+  //   const data = await d3.csv('../public/price.csv', d => ({
+  //     year: +d.year,
+  //     zip: d.zip,
+  //     value: +d.price
+  //   }));
+  //   lineChartData.set(data);
+  // });
+
+  // let data = [];
+
+  // onMount(async () => {
+  //   data = await d3.csv('../public/price.csv', d => ({
+  //     year: +d.year,
+  //     zip: d.zip,  // Make sure these property names match your CSV column headers
+  //     value: +d.price
+  //   }));
+  //   console.log(data); // Check what data looks like in the console
+  // });
+
+  // function handleZipSelect(zip) {
+  //   selectedZipCode.set(zip);
+  // }
 </script>
 
 <main>
@@ -97,10 +130,21 @@
     <p>In the remainder of our webpage, we will allow <span class="emphasis">you</span> to explore speculative investment activity trends in areas of Boston that <span class="emphasis">you are interested in</span>. By exploring the data behind speculative activities in different Boston zip codes, you will gain a deeper understanding of the evolving local real estate market dynamics, gauge the influence of investors, and be able to make more informed decisions about your long-term purchase. </p>
     <p><span class="instructions">In order to learn the real estate activity trends in specific zip codes in Boston, click on the areas you are curious about on the map!<span></p>
   </div>
-
-  <div class="container">
-    <img src = "map.gif" alt="" style="width: 1200px;"/>
+  <div class="content-layout">
+    <BostonZipCodeMapComplete />
+    <!-- <BostonZipCodeMap on:selectZip={handleZipSelect} /> -->
+    <!-- <LineChart {lineChartData} bind:selectedZipCode /> -->
+    <!-- <LineChart {lineChartData} bind:selectedZipCode={$selectedZipCode} /> -->
+    <!-- <LineChart {data} /> -->
+    <!-- <LineChart {data} /> -->
   </div>
+  <!-- <div class="container">
+    <img src = "map.gif" alt="" style="width: 1200px;"/>
+  </div> -->
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
 
   <div class="text-container" id="caption">
     <p>As a homebuyer, you may be interested in <span class="emphasis">several neighborhoods in Boston</span>. 
