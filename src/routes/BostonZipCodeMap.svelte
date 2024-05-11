@@ -49,7 +49,7 @@
   
   <style>
     path:hover {
-      fill: #f2bc19;  /* Change fill color on hover */
+      fill: #f26919;  /* Change fill color on hover */
     }
   </style>
   

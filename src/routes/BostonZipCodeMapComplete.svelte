@@ -5,6 +5,7 @@
 
   let svgMap, svgLineChart1, svgLineChart2;
   let selectedZipCode = null;
+  let selectedPath = null;
 
   $: if (selectedZipCode) {
     updateLineChart(selectedZipCode);
@@ -40,31 +41,55 @@
       .attr('d', pathGenerator)
       .attr('fill', '#ccc')
       .on('click', function(event, d) {
-        console.log("Clicked ZIP:", d.properties.ZCTA5CE10);
-        selectedZipCode = d.properties.ZCTA5CE10; // update selected ZIP code
+        // console.log("Clicked ZIP:", d.properties.ZCTA5CE10);
+        // selectedZipCode = d.properties.ZCTA5CE10; // update selected ZIP code
+        // reset previous selections
+        if (selectedPath) {
+                d3.select(selectedPath).attr('fill', '#ccc');
+            }
+            // update the fill of the currently clicked path
+            d3.select(this).attr('fill', '#d17d41');
+            selectedPath = this;
+            selectedZipCode = d.properties.ZCTA5CE10;
+            console.log("Clicked ZIP:", selectedZipCode);
+            updateLineChart(selectedZipCode);
       })
       .on('mouseover', function(event, d) {
-        d3.select(this).attr('fill', '#f2bc19');
+        if (this !== selectedPath) {  // apply hover color only if it's not the selected path
+          d3.select(this).attr('fill', '#f2bc19');
+        }
       })
       .on('mouseout', function(event, d) {
-        d3.select(this).attr('fill', '#ccc');
+        if (this !== selectedPath) {  // revert color only if it's not the selected path
+          d3.select(this).attr('fill', '#ccc');
+        }
       })
       .append('title')
       .text(d => `ZIP Code: ${d.properties.ZCTA5CE10}`);
+      // .on('mouseover', function(event, d) {
+      //     if (this !== selectedPath) {  // apply hover color only if it's not the selected path
+      //         d3.select(this).attr('fill', '#f2bc19');
+      //     }
+      // });
+      // .on('mouseout', function(event, d) {
+      //     if (this !== selectedPath) {  // revert color only if it's not the selected path
+      //         d3.select(this).attr('fill', '#ccc');
+      //     }
+      // });
       
-    // const zoom = d3.zoom()
-    //   .scaleExtent([1, 8])  // limit the scale from 1x to 8x
-    //   .on('zoom', ({transform}) => {
-    //     svgMap.selectAll('path').attr('transform', transform); // apply zoom
-    //   });
+    const zoom = d3.zoom()
+      .scaleExtent([1, 8])  // limit the scale from 1x to 8x
+      .on('zoom', ({transform}) => {
+        svgMap.selectAll('path').attr('transform', transform); // apply zoom
+      });
 
-    // d3.select(svgMap)
-    //   .attr('viewBox', `0 0 ${width} ${height}`)
-    //   .call(zoom)
-    //   .selectAll('path')
-    //   .data(filteredData.features)
-    //   .enter()
-    //   .append('path')
+    d3.select(svgMap)
+      .attr('viewBox', `0 0 ${width} ${height}`)
+      .call(zoom)
+      .selectAll('path')
+      .data(filteredData.features)
+      .enter()
+      .append('path')
   }
 
 
@@ -87,17 +112,16 @@
     }
     const data = lineChartData.get(zipCode).sort((a, b) => a.year - b.year);
 
-    // drawLineChart(svgLineChart1, data, 'price');
-
-    // const configs = [
-    //   { svg: svgLineChart1, value: 'price' },
-    //   // { svg: svgLineChart2, value: 'invest' }
-    // ];
+    const configs = [
+      { svg: svgLineChart1, value: 'price' },
+      { svg: svgLineChart2, value: 'invest' }
+    ];
     configs.forEach(({ svg, value }) => drawLineChart(svg, data, value, zipCode));
   }
 
   function drawLineChart(svgLineChart, data, valueField, zipCode) {
-    console.log("Drawing chart for:", valueField, "with data:", data);
+    // console.log("Drawing chart for:", valueField, "with data:", data);
+    const color = valueField === 'price' ? '#f26919' : 'yellow';  // different color for different charts
     const width = 460, height = 250;
     const margin = { top: 20, right: 20, bottom: 30, left: 50 };
     
@@ -116,19 +140,19 @@
       .range([margin.left, width - margin.right]);
 
     const y = d3.scaleLinear()
-      .domain([0, d3.max(data, d => d.price)])
+      .domain([0, d3.max(data, d => d[valueField])])
       .range([height - margin.bottom, margin.top]);
 
-    svgElement.selectAll('*').remove(); // Clear previous contents
+    svgElement.selectAll('*').remove();
 
     // title for the line chart
     svgElement.append("text")
       .attr("x", width / 2)
-      .attr("y", margin.top)
+      .attr("y", margin.top / 1.5)
       .attr("text-anchor", "middle")
       .style("font-size", "16px")
       .style("fill", "#ccc")
-      .text(`Price Trends for ZIP: ${zipCode}`);
+      .text(`${valueField === 'price' ? 'Price Trends' : 'Trends in Investor Activities'} for ZIP: ${zipCode}`);
 
     svgElement.append('g')
       .attr('transform', `translate(0,${height - margin.bottom})`)
@@ -140,14 +164,50 @@
 
     const line = d3.line()
       .x(d => x(d.year))
-      .y(d => y(d.price));
+      .y(d => y(d[valueField]));
 
     svgElement.append('path')
       .datum(data)
       .attr('fill', 'none')
-      .attr('stroke', 'yellow')
+      .attr('stroke', color)
       .attr('stroke-width', 3)
       .attr('d', line);
+
+      const focus = svgElement.append('g')
+                            .attr('class', 'focus')
+                            .style('display', 'none');
+
+    focus.append('circle')
+        .attr('r', 5)
+        .attr('fill', color)
+        .attr('stroke', 'white');
+
+    focus.append('text')
+        .attr('x', 15)
+        .attr('dy', '.31em')
+        .style('font-size', '12px')
+        .style('fill', color);
+
+    svgElement.append('rect')
+        .attr('class', 'overlay')
+        .attr('width', width)
+        .attr('height', height)
+        .style('opacity', 0)
+        .on('mouseover', () => focus.style('display', null))
+        .on('mouseout', () => focus.style('display', 'none'))
+        .on('mousemove', mousemove);
+
+    function mousemove(event) {
+        const bisectDate = d3.bisector(d => d.year).left;
+        const x0 = x.invert(d3.pointer(event, this)[0]);
+        const i = bisectDate(data, x0, 1);
+        const d0 = data[i - 1];
+        const d1 = data[i];
+        const d = x0 - d0.year > d1.year - x0 ? d1 : d0;
+
+        focus.attr('transform', `translate(${x(d.year)}, ${y(d[valueField])})`);
+        focus.select('text').text(`${valueField}: ${d[valueField]}`);
+    }
   }
 
   onMount(async () => {
@@ -160,14 +220,14 @@
 
 
 <main>
-  <p>Click on a ZIP code area on the map to see the price trends and investor activity.</p>
+  <p>Click on a ZIP code area on the map to see the price trends and investor activity. After clicking, hover over the line graphs to take a look at the exact prices and investor activities. </p>
   <div style="position: relative; display: flex; justify-content: space-between;">
     <svg bind:this={svgMap} width="8000" height="100" style="width: 100%; height: auto; border: 1px solid black;"></svg>
-    <svg bind:this={svgLineChart1} style="width: 100%; height: 300px;"></svg>
-    <!-- <div style="width: 50%;"> -->
-      <!-- <svg bind:this={svgLineChart1} style="width: 100%; height: 300px;"></svg> -->
-      <!-- <svg bind:this={svgLineChart2} style="width: 100%; height: 300px;"></svg> -->
-    <!-- </div> -->
+    <!-- <svg bind:this={svgLineChart1} style="width: 100%; height: 300px;"></svg> -->
+    <div style="width: 50%;">
+      <svg bind:this={svgLineChart1} style="width: 100%; height: 300px;"></svg>
+      <svg bind:this={svgLineChart2} style="width: 100%; height: 300px;"></svg>
+    </div>
   </div>
 </main>
 
