@@ -152,7 +152,7 @@
       .attr("text-anchor", "middle")
       .style("font-size", "16px")
       .style("fill", "#ccc")
-      .text(`${valueField === 'price' ? 'Price Trends' : 'Trends in Investor Activities'} for ZIP: ${zipCode}`);
+      .text(`${valueField === 'price' ? 'Median Price Trends' : 'Trends in Investor Activity (in %)'} for ZIP: ${zipCode}`);
 
     svgElement.append('g')
       .attr('transform', `translate(0,${height - margin.bottom})`)
@@ -220,7 +220,6 @@
 
 
 <main>
-  <p>Click on a ZIP code area on the map to see the price trends and investor activity. After clicking, hover over the line graphs to take a look at the exact prices and investor activities. </p>
   <div style="position: relative; display: flex; justify-content: space-between;">
     <svg bind:this={svgMap} width="8000" height="100" style="width: 100%; height: auto; border: 1px solid black;"></svg>
     <!-- <svg bind:this={svgLineChart1} style="width: 100%; height: 300px;"></svg> -->
@@ -229,6 +228,10 @@
       <svg bind:this={svgLineChart2} style="width: 100%; height: 300px;"></svg>
     </div>
   </div>
+  <p>the y-axis for the median price plot shows the median price in USD.  the y-axis for the
+    investor activity plot shows the percentage of transactions in the mapc residential sales
+    data involving an investor.
+  </p>
 </main>
 
 <!-- <svg bind:this={svgMap} width="1000" height="600" style="width: 100%; height: auto; border: 1px solid black;"></svg>

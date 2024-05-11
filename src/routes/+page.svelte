@@ -43,8 +43,11 @@
 <main>
   <div class="spacer"></div>
   <div class="title-page">
-      <h1>Understanding Boston's<br>Speculative Investment Landscape</h1>
-      <p class="team-name">EliteVisTeam</p>
+      <!-- <h1>Understanding Boston's<br>Speculative Investment Landscape</h1> -->
+      <h1>A Homebuyer's Guide to<br>the Investment Landscape in Boston</h1>
+
+      
+      <p class="team-name">EliteVis Team</p>
       <p class="team-name">Jenny Huang, Shelley Choi, Kimia Hamidieh, Julia Chae</p>
       <hr class="separator">
   </div>
@@ -128,7 +131,9 @@
   
   <div class="text-container" id="caption">
     <p>In the remainder of our webpage, we will allow <span class="emphasis">you</span> to explore speculative investment activity trends in areas of Boston that <span class="emphasis">you are interested in</span>. By exploring the data behind speculative activities in different Boston zip codes, you will gain a deeper understanding of the evolving local real estate market dynamics, gauge the influence of investors, and be able to make more informed decisions about your long-term purchase. </p>
-    <p><span class="instructions">In order to learn the real estate activity trends in specific zip codes in Boston, click on the areas you are curious about on the map!<span></p>
+    <p><span class="instructions">In order to learn about real estate trends in specific ZIP codes in Boston, click on the areas you are curious about on the map! 
+      After clicking, hover over the line graphs to take a look at the exact prices and investor activities.<span></p>
+    <p><span class="instructions">Note, only those ZIP codes that have data from the MAPC residential sales dataset are clickable!<span></p>
   </div>
   <div class="content-layout">
     <BostonZipCodeMapComplete />
@@ -148,7 +153,8 @@
 
   <div class="text-container" id="caption">
     <p>As a homebuyer, you may be interested in <span class="emphasis">several neighborhoods in Boston</span>. 
-    Our comparison tool allows you to compare not only the level of speculative real estate investment activities in different neighborhoods, but also other characteristic factors of the neighborhood that correlate strongly with investment activities. </p>
+    Our comparitive tool allows for a side-by-side comparison of, not only the level of speculative real estate investment activities 
+    in different neighborhoods, but also other characteristic factors of the neighborhood that correlate strongly with investment activities. </p>
     <p><span class="instructions">To get started, use the dropdown to select zipcodes of your interest and scroll to compare their different characteristics.<span></p>
   </div>
 
@@ -162,11 +168,26 @@
 
   <div class="text-container">
     <h1>Resources for New Homebuyers</h1>
-    <p>Learn More About Buying in Boston with these resources (we’ve compiled these resources to be especially user-friendly for first-time home buyers navigating the Boston housing market!)</p>
+    <p>Learn More About Buying in Boston with these resources (we’ve compiled these resources to be especially user-friendly for first-time homebuyers navigating the Boston housing market!)</p>
     <ol style="font-size: 26px;">
       <li>Here is a great resource that lets you set a realistic budget for your first-time homebuyer experience:<br> <a href="https://kingstonrem.com/essential-tips-for-first-time-homebuyers-in-the-boston-housing-market/">Essential Tips for First Time Boston Homebuyers</a> </li>
       <li>Here is an ultimate guide to Boston home-buying and renting intended for students and young individuals:<br> <a href="https://kingstonrem.com/the-ultimate-guide-to-student-rentals-in-cambridge-what-you-need-to-know/">Ultimate Guide to Student Homebuying and Rentals</a></li>
       <li>This resource provides Boston first-time homebuyers with a great towards a downpayment:<br> <a href="https://www.boston.gov/first-time-homebuyer-program">First-time Homebuyers Program</a></li>
+    </ol>
+  </div>
+
+  <div class="text-container">
+    <h1>Acknowledgments</h1>
+    <p>This project was developed with guidance and feedback from the <a href="https://www.mapc.org/">Metropolitan Area Planning Commission (MAPC).</a> 
+      We would like to express our gratitude for the contributors of each data source we used, 
+      including Residential Sales Transactions Data (data from MAPC), Census Data (data from American Community Survey and Census Bureau Data), 
+      the Massachusetts Land Parcel dataset (data from MAPC), Owner Occupancy and Corporate Ownership Data (data from Analyze Boston), 
+      and Historical Redlining Data (data from Mapping Inequality: Redlining in New Deal America).</p>
+    <h2>References</h2>
+      <ol style="font-size: 26px;">
+      <li><a href="https://apps.bostonglobe.com/2023/10/special-projects/spotlight-boston-housing/boston-towers-of-wealth/">Boston Globe Article: Boston Towers of Wealth</a></li>
+      <li><a href="https://michaeloppermann.com/d3-example/d3-waypoints-scrollytelling">D3 Waypoints Scrollytelling Example</a></li>
+      <li><a href="https://dsl.richmond.edu/panorama/redlining/contactus">Mapping Inequality: Redlining Data</a></li>
     </ol>
   </div>
 
