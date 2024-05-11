@@ -4,8 +4,12 @@
     --gray-background: #2f2f2f; 
     --primary-color: #1f1f1f; /*Dark gray for boxes */
     --accent-color: #fef1a6; /* Honey yellow / gold */
-    --text-color-white: #ffffff; /* Gold text color */
+    --strong-accent-color: #ffd700;
+    --text-color-white: #f0f0f0; /* Gold text color */
     --font-family: 'Gill Sans', sans-serif; /* Roboto font */
+    --text-box-background: #f0f0f0; 
+    --light-pink: #ffb6c1; /* Light pink color */
+    --light-green: #c3e6cb; /* Soft light green color */
 }
 
 body {
@@ -85,6 +89,7 @@ nav a:hover {
 .color-scheme select {
     padding: 0.5em;
     font-size: 12px;
+    color: var(--text-color-white);
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -95,7 +100,7 @@ nav a:hover {
 
 .text-container {
     background-color: var(--background-color);
-    padding: 20px;
+    padding: 50px 20px 20px 20px; /* 30px top, 20px right, 20px bottom, 20px left */
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -116,7 +121,7 @@ nav a:hover {
     margin-bottom: 5px;
 }
 
-#caption p {
+#caption h1 {
     color: var(--accent-color);
 }
 
@@ -169,7 +174,6 @@ nav a:hover {
     border: none;
     border-radius: 5px;
     background-color: var(--accent-color);
-    color: var(--text-color-white);
     font-size: 16px;
     cursor: pointer;
 }
@@ -258,6 +262,31 @@ color: var(--accent-color);
     margin: 0 auto; /* Center the containers horizontally */
 }
 
+#box {
+    background-color: rgba(128, 128, 128, 0.1); /* White background for the text box */
+    border: 1px solid #ccc; /* Add a light grey border */
+    border-radius: 5px; /* Add rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+} 
+
+#box p {
+    color: var(--text-color-white);
+    font-size: 14px; /* Make font slightly smaller */
+    line-height: 2; /* Adjust line spacing */
+} 
+
+.emphasis {
+    color: var(--strong-accent-color); /* Change color for emphasized words */
+    font-weight: bold; /* Add bold font weight for emphasis */
+    /* Add any additional styles for emphasis */
+}
+
+.instructions{
+    /* font-size: 12px; */
+    color: var(--light-green);
+}
+
+
 /* Adjust the width of the predictive container */
 #predictive {
     width: 80%; /* Set the width to 80% of the body width */
@@ -275,4 +304,8 @@ color: var(--accent-color);
     height: 100px; /* Adjust the height as needed */
     /* Optionally, you can add margins to control spacing */
     margin-right: 20px; /* Example of adding right margin */
+}
+
+.text-container li {
+    font-size: 22px; /* Adjust the font size as needed */
 }
