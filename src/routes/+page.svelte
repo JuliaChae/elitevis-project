@@ -7,36 +7,37 @@
   import SquareFootage from './SquareFootage.svelte';
   import HomeBuyers from './HomeBuyersGuide.svelte';
   import PredictiveTool from './PredictiveTool.svelte';
-  import BostonZipCodeMap from './BostonZipCodeMap.svelte';
-  import LineChart from './LineChart.svelte';
-  import { writable } from 'svelte/store';
+  import BostonZipCodeMapComplete from './BostonZipCodeMapComplete.svelte';
+  // import BostonZipCodeMap from './BostonZipCodeMap.svelte';
+  // import LineChart from './LineChart.svelte';
+  // import { writable } from 'svelte/store';
   
-  let selectedZipCode = writable(null);
-  let lineChartData = writable([]);
+  // let selectedZipCode = writable(null);
+  // let lineChartData = writable([]);
 
-  onMount(async () => {
-    const data = await d3.csv('../public/price.csv', d => ({
-      year: +d.year,
-      zip: d.zip,
-      value: +d.price
-    }));
-    lineChartData.set(data);
-  });
+  // onMount(async () => {
+  //   const data = await d3.csv('../public/price.csv', d => ({
+  //     year: +d.year,
+  //     zip: d.zip,
+  //     value: +d.price
+  //   }));
+  //   lineChartData.set(data);
+  // });
 
-  let data = [];
+  // let data = [];
 
-  onMount(async () => {
-    data = await d3.csv('../public/price.csv', d => ({
-      year: +d.year,
-      zip: d.zip,  // Make sure these property names match your CSV column headers
-      value: +d.price
-    }));
-    console.log(data); // Check what data looks like in the console
-  });
+  // onMount(async () => {
+  //   data = await d3.csv('../public/price.csv', d => ({
+  //     year: +d.year,
+  //     zip: d.zip,  // Make sure these property names match your CSV column headers
+  //     value: +d.price
+  //   }));
+  //   console.log(data); // Check what data looks like in the console
+  // });
 
-  function handleZipSelect(zip) {
-    selectedZipCode.set(zip);
-  }
+  // function handleZipSelect(zip) {
+  //   selectedZipCode.set(zip);
+  // }
 </script>
 
 <main>
@@ -135,11 +136,12 @@
     <p>As a next step, you may be curious about investment activity and price trends for the zipcode you are interested in buying in. In order to allow users to see the exact zip code they would like to buy in, we allow for the map to highlight zip codes of interest and focus on the recent speculative investment trends.</p>
   </div>
   <div class="content-layout">
-    <BostonZipCodeMap on:selectZip={handleZipSelect} />
+    <BostonZipCodeMapComplete />
+    <!-- <BostonZipCodeMap on:selectZip={handleZipSelect} /> -->
     <!-- <LineChart {lineChartData} bind:selectedZipCode /> -->
     <!-- <LineChart {lineChartData} bind:selectedZipCode={$selectedZipCode} /> -->
     <!-- <LineChart {data} /> -->
-    <LineChart {data} />
+    <!-- <LineChart {data} /> -->
   </div>
   <!-- <div class="container">
     <img src = "map.gif" alt="" style="width: 1200px;"/>
