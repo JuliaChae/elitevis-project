@@ -156,11 +156,25 @@
 
     svgElement.append('g')
       .attr('transform', `translate(0,${height - margin.bottom})`)
-      .call(d3.axisBottom(x).tickFormat(d3.format('d')));
+      .call(d3.axisBottom(x).tickFormat(d3.format('d')))
+      .append("text")
+        .text('year');
+
+    // svgElement.append('g')
+    //   .attr('transform', `translate(${margin.left},0)`)
+    //   .call(d3.axisLeft(y));
 
     svgElement.append('g')
-      .attr('transform', `translate(${margin.left},0)`)
-      .call(d3.axisLeft(y));
+        .attr('transform', `translate(${margin.left},0)`)
+        .call(d3.axisLeft(y))
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 15)
+        .attr("x", 0 - (height / 2))
+        .attr("dy", "-3.1em")
+        .style("text-anchor", "middle")  // center the text (since it's rotated)
+        // .text("price");
+        .text(`${valueField === 'price' ? 'Price ($)' : 'Investment (%)'}`);
 
     const line = d3.line()
       .x(d => x(d.year))
