@@ -1,10 +1,45 @@
 <script>
 	let options = [
-	  "02024", "02026", "02028", "02108", "02110", "02111", "02112", "02113", "02114", 
-	  "02115", "02119", "02120", "02121", "02122", "02124", "02125", "02126", "02127", 
-	  "02128", "02129", "02130", "02131", "02132", "02134", "02135", "02136", "02137", 
-	  "02138", "02169", "02171", "02186", "02199", "02201", "02205", "02214", "02218", 
-	  "02228", "02251", "02445", "02446", "02458", "02459", "02465", "02467", "02494"
+		"02026: East Dedham", 
+		"02108: Beacon Hill", 
+		"02110: Financial District", 
+		"02111: Chinatown", 
+		"02112: Financial District", 
+		"02113: North End", 
+		"02114: Downtown", 
+		"02115: Kenmore Square",
+		"02119: Washington Park | Roxbury", 
+		"02120: Mission Hill | Jamaica Plain", 
+		"02121: Franklin Field North | Roxbury", 
+		"02122: Port Norfolk | Dorchester",
+		"02124: Codman Sq | Dorchester",
+		"02125: Harbor Islands | Dorchester", 
+		"02126: Southern Mattapan | Mattapan", 
+		"02127: Telegraph Hill | South Boston", 
+		"02128: Jeffries Point | East Boston", 
+		"02129: Medford St | Charlestown", 
+		"02130: Jamaica Hills | Jamaica Plain", 
+		"02131: Metropolitan Hill | Roslindale", 
+		"02132: Upper Washington | West Roxbury", 
+		"02134: Allston", 
+		"02135: Brighton | Allston", 
+		"02136: Stony Brook | Hyde Park", 
+		"02137: Readville | Hyde Park", 
+		"02138: Huron Village", 
+		"02169: South Quincy", 
+		"02171: Quincy", 
+		"02186: East Milton", 
+		"02199: Prudential | Back Bay", 
+		"02201: Government Center | Downtown", 
+		"02205: Financial District | Downtown", 
+		"02228: Maverick Sq | East Boston",
+		"02445: Brookline Village", 
+		"02446: North Brookine", 
+		"02458: Newton Corner", 
+		"02459: Newton Centre", 
+		"02465: West Newton", 
+		"02467: Chestnut Hill", 
+		"02494: Needham Heights"
 	];
   
 	let option1 = '';
@@ -63,9 +98,9 @@
 	let zip_medianprice_2 = null;
 	let zip_medianprice_3 = null;
 
-	let zip_perc_investor_1 = null;
-	let zip_perc_investor_2 = null;
-	let zip_perc_investor_3 = null;
+	let zip_perc_investor_1 = 0.0;
+	let zip_perc_investor_2 = 0.0;
+	let zip_perc_investor_3 = 0.0;
 	
 	let zip_data = null;
 
@@ -84,7 +119,8 @@
 	onMount(fetchData);
   
 	function handleZIPChange(column, event) {
-	  const selectedZip = event.target.value;
+	  const val = event.target.value;
+	  const selectedZip = val.split(":")[0];
 	  const selectedZipData = zip_data.find(row => row.zip === selectedZip);
 	  if (selectedZipData) {
 		if (column === 1) {
@@ -185,17 +221,22 @@
 	}
   </script>
   
-  <p><b><center>Pick the zip codes you want to compare!</center></b></p>
-
   <div class="container" id="predictive">
 	<div class="column">
-	  <select bind:value={option1} on:change={() => handleZIPChange(1, event)}>
-		<option value="">Zip:</option>
-		{#each options as option}
-		  <option value={option} disabled={option === option2 || option === option3}>{option}</option>
-		{/each}
-	  </select>
+		<div class="sticky-select">
+			<br>
+			<center>
+				<select bind:value={option1} on:change={() => handleZIPChange(1, event)}>
+				<option value="">Zip:</option>
+				{#each options as option}
+				<option value={option} disabled={option === option2 || option === option3}>{option}</option>
+				{/each}
+				</select>
+			</center>
+			<br>
+		</div>
 	  {#if option1 !== ''}
+
 	  	<p><b><center>Demographics (by 10s)</center></b></p>
 		<div class="legend">
 			<div class="legend-item">
@@ -212,11 +253,11 @@
 			</div>
 			<div class="legend-item">
 			  <div class="square_indian"></div>
-			  <span>Native American</span>
+			  <span>Native A.</span>
 			</div>
 			<div class="legend-item">
 				<div class="square_blank"></div>
-				<span>Not identified</span>
+				<span>Unidentified</span>
 			</div>
 		</div>
 		  
@@ -303,6 +344,18 @@
 		</div>
 
 		<br><br>
+		<p><b><center>Percentage of Investor Activity (by %)</center></b></p>
+		<div class="population">
+		  {#if zip_perc_investor_1 !== null}
+			{#each Array(Math.ceil(zip_perc_investor_1)) as _, i}
+			  <div class="square_investor"></div>
+			{/each}
+		  {:else}
+			<p>No population data available for selected ZIP code</p>
+		  {/if}
+		</div>
+
+		<br><br>
 		<p><b><center>Median Price (by $1000)</center></b></p>
 		<div class="population">
 		  {#if zip_medianprice_1 !== null}
@@ -314,28 +367,22 @@
 		  {/if}
 		</div>
 
-		<br><br>
-		<p><b><center>Percentage of Investor Activity (by %)</center></b></p>
-		<div class="population">
-		  {#if zip_perc_investor_1 !== null}
-			{#each Array(Math.ceil(zip_perc_investor_1 * 100)) as _, i}
-			  <div class="square_investor"></div>
-			{/each}
-		  {:else}
-			<p>No population data available for selected ZIP code</p>
-		  {/if}
-		</div>
-
 	  {/if}
 	</div>
   
 	<div class="column">
-	  <select bind:value={option2} on:change={() => handleZIPChange(2, event)}>
-		<option value="">Zip:</option>
-		{#each options as option}
-		  <option value={option} disabled={option === option1 || option === option3}>{option}</option>
-		{/each}
-	  </select>
+		<div class="sticky-select">
+			<br>
+			<center>
+				<select bind:value={option2} on:change={() => handleZIPChange(2, event)}>
+					<option value="">Zip:</option>
+					{#each options as option}
+					<option value={option} disabled={option === option1 || option === option3}>{option}</option>
+					{/each}
+				</select>
+			</center>
+			<br>
+		</div>
 	  {#if option2 !== ''}
 	  	<p><b><center>Demographics (by 10s)</center></b></p>
 		<div class="legend">
@@ -353,11 +400,11 @@
 			</div>
 			<div class="legend-item">
 			  <div class="square_indian"></div>
-			  <span>Native American</span>
+			  <span>Native A.</span>
 			</div>
 			<div class="legend-item">
 				<div class="square_blank"></div>
-				<span>Not identified</span>
+				<span>Unidentified</span>
 			</div>
 		</div>
 		  
@@ -443,6 +490,18 @@
 		</div>
 
 		<br><br>
+		<p><b><center>Percentage of Investor Activity (by %)</center></b></p>
+		<div class="population">
+		  {#if zip_perc_investor_2 !== null}
+			{#each Array(Math.ceil(zip_perc_investor_2)) as _, i}
+			  <div class="square_investor"></div>
+			{/each}
+		  {:else}
+			<p>No population data available for selected ZIP code</p>
+		  {/if}
+		</div>
+
+		<br><br>
 		<p><b><center>Median Price (by $1000)</center></b></p>
 		<div class="population">
 		  {#if zip_medianprice_2 !== null}
@@ -454,28 +513,23 @@
 		  {/if}
 		</div>
 
-		<br><br>
-		<p><b><center>Percentage of Investor Activity (by %)</center></b></p>
-		<div class="population">
-		  {#if zip_perc_investor_2 !== null}
-			{#each Array(Math.ceil(zip_perc_investor_2 * 100)) as _, i}
-			  <div class="square_investor"></div>
-			{/each}
-		  {:else}
-			<p>No population data available for selected ZIP code</p>
-		  {/if}
-		</div>
-
 	  {/if}
 	</div>
   
 	<div class="column">
-	  <select bind:value={option3} on:change={() => handleZIPChange(3, event)}>
-		<option value="">Zip:</option>
-		{#each options as option}
-		  <option value={option} disabled={option === option1 || option === option2}>{option}</option>
-		{/each}
-	  </select>
+		<div class="sticky-select">
+			<br>
+			<center>
+				<select bind:value={option3} on:change={() => handleZIPChange(3, event)}>
+					<option value="">Zip:</option>
+					{#each options as option}
+					<option value={option} disabled={option === option1 || option === option2}>{option}</option>
+					{/each}
+				</select>
+			</center>
+			<br>
+		</div>
+
 	  {#if option3 !== ''}
 	  	<p><b><center>Demographics (by 10s)</center></b></p>		
 		<div class="legend">
@@ -493,14 +547,14 @@
 			</div>
 			<div class="legend-item">
 			  <div class="square_indian"></div>
-			  <span>Native American</span>
+			  <span>Native A.</span>
 			</div>
 			<div class="legend-item">
 				<div class="square_blank"></div>
-				<span>Not identified</span>
+				<span>Unidentified</span>
 			</div>
 		</div>
-		  
+		
 		<div class="population">
 		  {#if zip_pop_3 !== null}
 			{#each Array(Math.ceil(zip_white_3 / 10)) as _, i}
@@ -583,11 +637,11 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Median Price (by $1000)</center></b></p>
+		<p><b><center>Percentage of Investor Activity (by %)</center></b></p>
 		<div class="population">
-		  {#if zip_medianprice_3 !== null}
-			{#each Array(Math.ceil(zip_medianprice_3 / 1000)) as _, i}
-			  <div class="square_price"></div>
+		  {#if zip_perc_investor_3 !== null}
+			{#each Array(Math.ceil(zip_perc_investor_3)) as _, i}
+			  <div class="square_investor"></div>
 			{/each}
 		  {:else}
 			<p>No population data available for selected ZIP code</p>
@@ -595,11 +649,11 @@
 		</div>
 
 		<br><br>
-		<p><b><center>Percentage of Investor Activity (by %)</center></b></p>
+		<p><b><center>Median Price (by $1000)</center></b></p>
 		<div class="population">
-		  {#if zip_perc_investor_3 !== null}
-			{#each Array(Math.ceil(zip_perc_investor_3 * 100)) as _, i}
-			  <div class="square_investor"></div>
+		  {#if zip_medianprice_3 !== null}
+			{#each Array(Math.ceil(zip_medianprice_3 / 1000)) as _, i}
+			  <div class="square_price"></div>
 			{/each}
 		  {:else}
 			<p>No population data available for selected ZIP code</p>
@@ -613,14 +667,14 @@
   <style>
 	.container {
 	  display: flex;
-	  border: 1px solid transparent;
+	  border: 1px solid white;
+	  padding: 20px;
 	}
   
 	.column {
 	  flex: 1;
-	  margin: 0 0;
-	  border-right: 1px solid white;
-	  padding: 10px;
+	  margin: 30 0;
+	  padding: 20px;
 	}
   
 	.column:last-child {
@@ -633,13 +687,6 @@
 	  margin-top: 10px;
 	}
   
-	.square {
-	  width: 10px;
-	  height: 10px;
-	  background-color: grey;
-	  margin: 1px;
-	}
-
 	.square_white {
 	  width: 10px;
 	  height: 10px;
@@ -733,13 +780,20 @@
 	.legend-item {
 		display: flex;
 		align-items: center;
-		margin-right: 10px;
+		margin-right: 5px;
 	}
 
 	.legend-item span {
 		margin-left: 5px;
 	}
 
+	.sticky-select {
+        position: sticky;
+        top: 0px;
+		height: 100px;
+        z-index: 1000; /* Ensure it stays on top of other content */
+        background-color: #1f1f1f;
+    }
 	
   </style>
   

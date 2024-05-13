@@ -35,11 +35,18 @@ body {
 }
 
 .title-page .separator {
-    /* width: 80%; */
+    width: 70%;
     height: 1px; /* Add height property to ensure the separator is visible */
     background-color: var(--accent-color); /* Set background color instead of border */
     margin: 50px auto;
     clear: both;
+}
+
+.caret {
+    display: inline-block;
+    transform: rotate(180deg);
+    font-size: 44px;
+    font-weight: bold;
 }
 
 .subtitle-page h1 {

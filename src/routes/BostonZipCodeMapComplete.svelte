@@ -242,10 +242,7 @@
       <svg bind:this={svgLineChart2} style="width: 100%; height: 300px;"></svg>
     </div>
   </div>
-  <p>the y-axis for the median price plot shows the median price in USD.  the y-axis for the
-    investor activity plot shows the percentage of transactions in the mapc residential sales
-    data involving an investor.
-  </p>
+  <p>The median price plot shows the median price in USD. The investor activity plot shows % of transactions in the MAPC residential sales data involving an investor.</p>
 </main>
 
 <!-- <svg bind:this={svgMap} width="1000" height="600" style="width: 100%; height: auto; border: 1px solid black;"></svg>

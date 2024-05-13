@@ -43,13 +43,15 @@
 <main>
   <div class="spacer"></div>
   <div class="title-page">
+      <br><br>
       <!-- <h1>Understanding Boston's<br>Speculative Investment Landscape</h1> -->
       <h1>A Homebuyer's Guide to<br>the Investment Landscape in Boston</h1>
-
-      
+      <br><br><br><br>
       <p class="team-name">EliteVis Team</p>
       <p class="team-name">Jenny Huang, Shelley Choi, Kimia Hamidieh, Julia Chae</p>
-      <hr class="separator">
+      <br><br><br><br><br><br>
+      <p class="caret">&and;</p>
+      <br><br><br><br><br><br>
   </div>
 
   <div class="text-container" id="caption">
